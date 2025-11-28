@@ -1,0 +1,234 @@
+.formulario-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.formulario h2 {
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.descripcion-formulario {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.campo input::placeholder {
+  color: #9ca3af;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.radio-option:hover {
+  border-color: #2563eb;
+  background-color: #f0f4ff;
+}
+
+.radio-option input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.radio-option span {
+  font-weight: 500;
+}
+
+.radio-option input[type="radio"]:checked + span {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.radio-option input[type="radio"]:checked ~ span {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.mensaje-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 500;
+}
+
+.campo input.error,
+.campo select.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.campo input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.btn:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn.cargando {
+  position: relative;
+  color: transparent;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.mensaje-ayuda {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+}
+/* Estilos para Formik */
+.campo-valido {
+  border-color: #10b981 !important;
+  background-color: #f0fdf4 !important;
+}
+
+.formik-form .campo {
+  margin-bottom: 1.5rem;
+}
+
+.formik-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.formik-form input,
+.formik-form select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.formik-form input:focus,
+.formik-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Mejoras para radio buttons en Formik */
+.radio-group[role="group"] {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group[role="group"] .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.radio-group[role="group"] .radio-option:hover {
+  border-color: #2563eb;
+  background-color: #f0f4ff;
+}
+
+.radio-group[role="group"] input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.radio-group[role="group"] input[type="radio"]:checked + span {
+  color: #2563eb;
+  font-weight: 600;
+}

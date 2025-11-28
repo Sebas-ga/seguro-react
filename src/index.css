@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+
+.hover-shadow {
+  transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* gradiente del fondo */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/*  botones */
+.btn {
+  transition: all 0.3s ease;
+}
+
+/* formularios */
+.form-control:focus,
+.form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+/* Modal compacto */
+.compact-modal {
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+.compact-modal .modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Scroll personalizado para el modal */
+.compact-modal .modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.compact-modal .modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.compact-modal .modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+/* Tamaños responsive del modal */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .compact-modal {
+    max-height: 90vh;
+  }
+  
+  .compact-modal .modal-body {
+    max-height: 65vh;
+    padding: 1rem !important;
+  }
+}
+
+/* Mejoras para elementos pequeños */
+.modal-header {
+  padding: 0.5rem 1rem;
+}
+
+.modal-footer {
+  padding: 0.5rem 1rem;
+}

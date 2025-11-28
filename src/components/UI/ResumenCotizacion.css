@@ -1,0 +1,66 @@
+.resumen-cotizacion {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.header-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-resumen h3 {
+  color: #1f2937;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.btn-editar {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.btn-editar:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.datos-resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fila-dato {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.fila-dato:last-child {
+  border-bottom: none;
+}
+
+.etiqueta {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.valor {
+  color: #6b7280;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,134 @@
+.lista-coberturas {
+  margin-top: 2rem;
+}
+
+.lista-coberturas h2 {
+  color: #1f2937;
+  /* gradiente del fondo */
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion-resultados {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.grid-coberturas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tarjeta-cobertura {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.tarjeta-cobertura:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header-tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header-tarjeta .icono {
+  font-size: 1.5rem;
+}
+
+.header-tarjeta h3 {
+  color: #1f2937;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.descripcion {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.precio {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.precio-final {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  display: block;
+}
+
+.periodo {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.coberturas-incluidas {
+  margin: 1.5rem 0;
+}
+
+.coberturas-incluidas h4 {
+  color: #374151;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.coberturas-incluidas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coberturas-incluidas li {
+  padding: 0.25rem 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.coberturas-incluidas li:last-child {
+  border-bottom: none;
+}
+
+.btn-seleccionar {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-seleccionar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.sin-resultados {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 2px dashed #d1d5db;
+}
