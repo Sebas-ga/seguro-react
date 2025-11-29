@@ -3,7 +3,7 @@ import { FACTORES_AJUSTE,COBERTURAS } from '../data/coberturasData';
 export const calcularPrima = (datosUsuario, precioBase) => {
   let prima = precioBase;
   
-  // Factor por edad
+  // por edad
   const edad = parseInt(datosUsuario.edad);
   if (edad >= 18 && edad <= 24) {
     prima *= FACTORES_AJUSTE.edad.joven;
@@ -11,13 +11,13 @@ export const calcularPrima = (datosUsuario, precioBase) => {
     prima *= FACTORES_AJUSTE.edad.mayor;
   }
   
-  // Factor por tipo de propiedad
+  // por tipo de propiedad
   prima *= FACTORES_AJUSTE.tipoPropiedad[datosUsuario.tipoPropiedad];
   
-  // Factor por ubicación
+  // por ubicación
   prima *= FACTORES_AJUSTE.ubicacion[datosUsuario.ubicacion];
   
-  // Factor por historial de reclamaciones
+  // por reclamaciones
   const reclamaciones = parseInt(datosUsuario.historialReclamaciones);
   if (reclamaciones === 0) {
     prima *= FACTORES_AJUSTE.historialReclamaciones[0];
@@ -29,11 +29,11 @@ export const calcularPrima = (datosUsuario, precioBase) => {
     prima *= FACTORES_AJUSTE.historialReclamaciones["3+"];
   }
   
-  // Factor por metros cuadrados
+  // por m2
   const metros = parseInt(datosUsuario.metrosCuadrados) || 0;
   prima += metros * FACTORES_AJUSTE.metrosCuadrados.factor;
   
-  return Math.round(prima * 100) / 100; // Redondear a 2 decimales
+  return Math.round(prima * 100) / 100; 
 };
 
 export const calcularTodasCoberturas = (datosUsuario) => {

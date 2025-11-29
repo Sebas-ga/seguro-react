@@ -23,10 +23,10 @@ const CotizadorPage = () => {
     mostrarModalConfirmacion,
     confirmarSeleccion,
     cancelarSeleccion,
-    cotizacionActualId // ✅ Obtener el estado de cotización actual
+    cotizacionActualId //estado de cotización actual
   } = useCotizacion();
-  // ✅ Agregar console.log para debug
-  console.log('🔍 Estado en CotizadorPage:', {
+  
+  console.log(' Estado en CotizadorPage:', {
     mostrarFormulario,
     mostrarResultados,
     cargando,

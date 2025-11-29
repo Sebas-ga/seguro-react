@@ -11,7 +11,7 @@ const HistorialPage = () => {
   const { historial, eliminarDelHistorial, limpiarHistorial } = useHistorialContext();
   const { cargarCotizacionDesdeHistorial } = useCotizacion();
 
-  // ✅ Estados para los modales de confirmación
+  // modales de confirmación
   const [showModalEliminar, setShowModalEliminar] = useState(false);
   const [showModalLimpiarTodo, setShowModalLimpiarTodo] = useState(false);
   const [itemAEliminar, setItemAEliminar] = useState(null);
@@ -24,14 +24,14 @@ const HistorialPage = () => {
     navigate('/Cotizador-seguro');
   };
 
-  // ✅ Función para abrir modal de eliminar item
+  //Funcion para modal de eliminar 
   const handleAbrirModalEliminar = (item, event) => {
     event.stopPropagation();
     setItemAEliminar(item);
     setShowModalEliminar(true);
   };
 
-  // ✅ Función para confirmar eliminación de item
+  // Funcion para confirmar
   const handleConfirmarEliminar = () => {
     if (itemAEliminar) {
       eliminarDelHistorial(itemAEliminar.id);
@@ -40,24 +40,24 @@ const HistorialPage = () => {
     setShowModalEliminar(false);
   };
 
-  // ✅ Función para cancelar eliminación
+  // Funcion para cancelar
   const handleCancelarEliminar = () => {
     setItemAEliminar(null);
     setShowModalEliminar(false);
   };
 
-  // ✅ Función para abrir modal de limpiar todo
+  // Funcion para limpiar todo
   const handleAbrirModalLimpiarTodo = () => {
     setShowModalLimpiarTodo(true);
   };
 
-  // ✅ Función para confirmar limpiar todo
+  // Funcion q confirma limpiar todo
   const handleConfirmarLimpiarTodo = () => {
     limpiarHistorial();
     setShowModalLimpiarTodo(false);
   };
 
-  // ✅ Función para cancelar limpiar todo
+  // Funcion q cancela todo
   const handleCancelarLimpiarTodo = () => {
     setShowModalLimpiarTodo(false);
   };
@@ -178,7 +178,7 @@ const HistorialPage = () => {
         ))}
       </div>
 
-      {/* ✅ Modal para eliminar item individual */}
+      {/* elimina item individual */}
       <ModalConfirmacionEliminar 
         show={showModalEliminar}
         onHide={handleCancelarEliminar}
@@ -187,7 +187,7 @@ const HistorialPage = () => {
         itemNombre={itemAEliminar?.datosUsuario.nombre || 'Cotización sin nombre'}
       />
 
-      {/* ✅ Modal para limpiar todo el historial */}
+      {/* limpia todo el historial */}
       <ModalConfirmacionEliminar 
         show={showModalLimpiarTodo}
         onHide={handleCancelarLimpiarTodo}

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const useHistorial = () => {
   const [historial, setHistorial] = useState([]);
 
-  // Cargar historial desde localStorage al inicializar
+  // Carga historial desde localStorage 
   useEffect(() => {
     const historialGuardado = localStorage.getItem('historialCotizaciones');
     if (historialGuardado) {
@@ -16,7 +16,7 @@ export const useHistorial = () => {
     }
   }, []);
 
-  // Guardar en localStorage cuando cambie el historial
+  // Guarda en localStorage cuando cambie el historial
   useEffect(() => {
     try {
       localStorage.setItem('historialCotizaciones', JSON.stringify(historial));

@@ -11,14 +11,14 @@ function Navigation() {
   return (
     <nav className="nav nav-pills justify-content-center">
       <Link 
-        to="/cotizador-seguro"  // ✅ Cambiar a ruta raíz
+        to="/cotizador-seguro"  // ruta raíz
         className={`nav-link ${location.pathname === '/cotizador-seguro' ? 'active bg-white text-primary' : 'text-white'}`}
       >
         <i className="bi bi-house me-2"></i>
         Cotizador
       </Link>
       <Link 
-        to="/historial"  // ✅ Ruta simple
+        to="/historial"  // ruta historial
         className={`nav-link ${location.pathname === '/historial' ? 'active bg-white text-primary' : 'text-white'}`}
       >
         <i className="bi bi-clock-history me-2"></i>
@@ -51,8 +51,8 @@ function App() {
 
         <main className="py-3" style={{ minHeight: 'calc(100vh - 200px)' }}>
           <Routes>
-            <Route path="/cotizador-seguro" element={<CotizadorPage />} /> {/* ✅ Ruta raíz */}
-            <Route path="/historial" element={<HistorialPage />} /> {/* ✅ Ruta simple */}
+            <Route path="/cotizador-seguro" element={<CotizadorPage />} /> 
+            <Route path="/historial" element={<HistorialPage />} /> 
           </Routes>
         </main>
 

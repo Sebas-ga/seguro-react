@@ -22,16 +22,16 @@ export const useCotizacion = () => {
   const [cotizacionActualId, setCotizacionActualId] = useState(null); // ✅ Nuevo estado
 
   const historialContext = useContext(HistorialContext);
-  // ✅ EFECTO PARA RESETEAR AL CARGAR LA PÁGINA
+  // 
   useEffect(() => {
     console.log('🔄 useCotizacion inicializado - Reseteando estados');
-    // Asegurarnos de que el formulario se muestre al cargar
+    // me aseguro de que el formulario se muestre al cargar
     setMostrarFormulario(true);
     setMostrarResultados(false);
     setCargando(false);
     setCoberturaSeleccionada(null);
     setMostrarModalConfirmacion(false);
-  }, []); // ✅ Se ejecuta solo una vez al montar el componente
+  }, []); 
 
   const actualizarDatos = (nuevosDatos) => {
     setDatosUsuario(prev => ({ ...prev, ...nuevosDatos }));
@@ -41,7 +41,7 @@ export const useCotizacion = () => {
     setCargando(true);
     setMostrarResultados(false);
     setMostrarFormulario(false);
-    setCotizacionActualId(null); // ✅ Resetear al calcular nueva cotización
+    setCotizacionActualId(null); 
     
     setTimeout(() => {
       try {
@@ -62,18 +62,18 @@ export const useCotizacion = () => {
     console.log('🎯 Seleccionando cobertura:', cobertura);
     setCoberturaSeleccionada(cobertura);
     
-    // ✅ Guardar en el historial SOLO si es una nueva selección
+    //Guarda el historial solo si es una nueva selección
     if (historialContext && historialContext.agregarAlHistorial) {
-      // Si ya hay una cotización actual, actualizarla en lugar de crear una nueva
+      // Si ya hay una cotización actual, actualiza en lugar de crear una nueva
       if (cotizacionActualId) {
         console.log('🔄 Actualizando cotización existente en historial');
-        // Primero eliminamos la anterior
+        // Primero elimino la anterior
         historialContext.eliminarDelHistorial(cotizacionActualId);
       }
       
-      console.log('📝 Guardando en historial...');
+      //console.log(' Guardando en historial...');
       const historialId = historialContext.agregarAlHistorial(datosUsuario, cotizaciones, cobertura);
-      setCotizacionActualId(historialId); // ✅ Guardar el ID de la cotización actual
+      setCotizacionActualId(historialId); 
       console.log('✅ Guardado en historial con ID:', historialId);
     } else {
       console.warn('⚠️ Contexto de historial no disponible');
@@ -84,14 +84,14 @@ export const useCotizacion = () => {
 
   const confirmarSeleccion = () => {
     setMostrarModalConfirmacion(false);
-    // La cotización ya está guardada, no necesitamos hacer nada más
+    // La cotización ya está guardada, listo no hacer nada más
   };
 
   const cancelarSeleccion = () => {
     setMostrarModalConfirmacion(false);
     setCoberturaSeleccionada(null);
     
-    // ✅ Si cancelamos, eliminamos la cotización del historial si se había guardado
+    // si se cancela, elimino la cotización del historial si se había guardado
     if (cotizacionActualId && historialContext) {
       historialContext.eliminarDelHistorial(cotizacionActualId);
       setCotizacionActualId(null);
@@ -113,7 +113,7 @@ export const useCotizacion = () => {
     setMostrarFormulario(true);
     setCoberturaSeleccionada(null);
     setMostrarModalConfirmacion(false);
-    setCotizacionActualId(null); // ✅ Resetear también este estado
+    setCotizacionActualId(null); //
   };
 
   const editarDatos = () => {
@@ -127,7 +127,7 @@ export const useCotizacion = () => {
     setCotizaciones(cotizacionGuardada.cotizaciones);
     setMostrarFormulario(false);
     setMostrarResultados(true);
-    setCotizacionActualId(cotizacionGuardada.id); // ✅ Recordar el ID
+    setCotizacionActualId(cotizacionGuardada.id); 
     
     if (cotizacionGuardada.coberturaSeleccionada) {
       setCoberturaSeleccionada(cotizacionGuardada.coberturaSeleccionada);
@@ -144,7 +144,7 @@ export const useCotizacion = () => {
     cargando,
     coberturaSeleccionada,
     mostrarModalConfirmacion,
-    cotizacionActualId, // ✅ Exportar si es necesario
+    cotizacionActualId, 
     calcularCotizacion,
     reiniciarCotizacion,
     editarDatos,

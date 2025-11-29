@@ -108,7 +108,7 @@ const FormularioDatos = ({
                       </div>
                     </div>
 
-                    {/* Ubicación - Más compacta */}
+                    {/* Ubicación  */}
                     <div className="mb-3">
                       <label className="form-label small fw-semibold text-muted mb-2">
                         Ubicación
@@ -148,7 +148,7 @@ const FormularioDatos = ({
                       <ErrorMessage name="ubicacion" component="div" className="text-danger small mt-1" />
                     </div>
 
-                    {/* Historial de Reclamaciones - Más pequeño */}
+                    {/* Historial reclamos*/}
                     <div className="mb-4">
                       <label htmlFor="historialReclamaciones" className="form-label small fw-semibold text-muted">
                         Reclamaciones (últimos 5 años)
@@ -168,7 +168,7 @@ const FormularioDatos = ({
                       <ErrorMessage name="historialReclamaciones" component="div" className="text-danger small mt-1" />
                     </div>
 
-                    {/* Botón de Envío */}
+                    
                     <button 
                       type="submit" 
                       className={`btn btn-primary w-100 py-2 fw-semibold ${cargando ? 'disabled' : ''}`}

@@ -6,7 +6,7 @@ const ModalConfirmacion = ({
   onHide, 
   cobertura, 
   onConfirm,
-  esActualizacion = false // ✅ Nuevo prop para saber si es actualización
+  esActualizacion = false 
 }) => {
   if (!show) return null;
 

@@ -4,7 +4,7 @@ const ModalConfirmacionEliminar = ({
   show, 
   onHide, 
   onConfirm,
-  tipo = 'item', // 'item' para eliminar uno, 'todo' para limpiar todo
+  tipo = 'item', // item para eliminar uno, todo para limpiar todo
   itemNombre = '' 
 }) => {
   if (!show) return null;

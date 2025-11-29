@@ -12,9 +12,9 @@ export const useHistorialContext = () => {
 
 export const HistorialProvider = ({ children }) => {
   const [historial, setHistorial] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false); // ✅ Nuevo estado para controlar carga
+  const [isLoaded, setIsLoaded] = useState(false); // Nuevo estado para control carga
 
-  // Cargar historial desde localStorage al inicializar - SOLO UNA VEZ
+  // Carga historial desde localStorage al inicializar
   useEffect(() => {
     console.log('🔄 Cargando historial desde localStorage...');
     const historialGuardado = localStorage.getItem('historialCotizaciones');
@@ -32,12 +32,11 @@ export const HistorialProvider = ({ children }) => {
       console.log('📂 No hay historial guardado en localStorage');
     }
     
-    setIsLoaded(true); // ✅ Marcar como cargado
-  }, []); // ✅ Array de dependencias vacío = se ejecuta solo una vez
+    setIsLoaded(true); //
+  }, []);
 
-  // Guardar en localStorage cuando cambie el historial - PERO SOLO SI YA SE CARGÓ
-  useEffect(() => {
-    if (isLoaded) { // ✅ Solo guardar si ya cargamos los datos iniciales
+    useEffect(() => {
+    if (isLoaded) { // Solo guarda si ya se cargo los datos iniciales
       try {
         console.log('💾 Guardando historial en localStorage:', historial);
         localStorage.setItem('historialCotizaciones', JSON.stringify(historial));
@@ -45,7 +44,7 @@ export const HistorialProvider = ({ children }) => {
         console.error('❌ Error guardando historial:', error);
       }
     }
-  }, [historial, isLoaded]); // ✅ Depende de historial Y de isLoaded
+  }, [historial, isLoaded]); 
 
   const agregarAlHistorial = (datosUsuario, cotizaciones, coberturaSeleccionada) => {
     console.log('🔵 Agregando al historial...');
