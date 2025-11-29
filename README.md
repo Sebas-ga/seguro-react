@@ -12,7 +12,7 @@ Es un cotizador de seguros para propiedades que:
 
 ## Estructura del proyecto
 src/
-├── 🎨 components/     # Formulario/FormularioDatos.jsx **Captura los datos del usuario
+├── 🎨 components/     # Componentes de UI reutilizables
 ├── 🎣 hooks/         # Lógica personalizada de React
 ├── 🌐 context/       # Estado global de la aplicación  
 ├── 📄 pages/         # Vistas/páginas principales
@@ -20,7 +20,21 @@ src/
 ├── 📊 data/          # Datos estáticos
 └── 🎯 main/App       # Archivos principales
 
-## Expanding the ESLint configuration
+## TECNOLOGÍAS IMPLEMENTADAS
+   Tecnología	Función en el proyecto
+   React 18	Framework principal
+   React Router	Navegación entre páginas
+   Formik + Yup	Formularios y validación
+   Bootstrap 5	Diseño y responsive
+   Context API	Estado global del historial
+   LocalStorage	Persistencia de datos
+   Custom Hooks	Lógica reutilizable
+   
+## CICLO DE VIDA DE UNA COTIZACIÓN
+ Ingreso de datos → Formulario
+ Cálculo → useCotizacion + calculos.js
+ Visualización → ListaCoberturas
+ Guardado → HistorialContext + localStorage
+ Consulta → HistorialPage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# cotizador
+
