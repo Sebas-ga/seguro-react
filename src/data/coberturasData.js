@@ -3,7 +3,7 @@ export const COBERTURAS = [
     id: 1,
     nombre: "Básica",
     descripcion: "Protección esencial para tu propiedad",
-    precioBase: 100,
+    precioBase: 5000,
     coberturasIncluidas: [
       "Incendio",
       "Robo básico",
@@ -17,7 +17,7 @@ export const COBERTURAS = [
     id: 2,
     nombre: "Estándar",
     descripcion: "Cobertura balanceada para mayor tranquilidad",
-    precioBase: 180,
+    precioBase: 9000,
     coberturasIncluidas: [
       "Incendio",
       "Robo ampliado",
@@ -33,7 +33,7 @@ export const COBERTURAS = [
     id: 3,
     nombre: "Premium",
     descripcion: "Protección completa y máxima seguridad",
-    precioBase: 280,
+    precioBase: 15000,
     coberturasIncluidas: [
       "Incendio",
       "Robo total",

@@ -19,12 +19,12 @@ export const useCotizacion = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(true);
   const [coberturaSeleccionada, setCoberturaSeleccionada] = useState(null);
   const [mostrarModalConfirmacion, setMostrarModalConfirmacion] = useState(false);
-  const [cotizacionActualId, setCotizacionActualId] = useState(null); // ✅ Nuevo estado
+  const [cotizacionActualId, setCotizacionActualId] = useState(null); 
 
   const historialContext = useContext(HistorialContext);
   // 
   useEffect(() => {
-    console.log('🔄 useCotizacion inicializado - Reseteando estados');
+    //console.log('🔄 useCotizacion inicializado - Reseteando estados');
     // me aseguro de que el formulario se muestre al cargar
     setMostrarFormulario(true);
     setMostrarResultados(false);
@@ -38,6 +38,7 @@ export const useCotizacion = () => {
   };
 
   const calcularCotizacion = () => {
+    //console.log('🧮 CALCULANDO con datos:', datosUsuario); 
     setCargando(true);
     setMostrarResultados(false);
     setMostrarFormulario(false);
@@ -59,24 +60,24 @@ export const useCotizacion = () => {
   };
 
   const seleccionarCobertura = (cobertura) => {
-    console.log('🎯 Seleccionando cobertura:', cobertura);
+  
     setCoberturaSeleccionada(cobertura);
     
     //Guarda el historial solo si es una nueva selección
     if (historialContext && historialContext.agregarAlHistorial) {
       // Si ya hay una cotización actual, actualiza en lugar de crear una nueva
       if (cotizacionActualId) {
-        console.log('🔄 Actualizando cotización existente en historial');
+       
         // Primero elimino la anterior
         historialContext.eliminarDelHistorial(cotizacionActualId);
       }
       
-      //console.log(' Guardando en historial...');
+     
       const historialId = historialContext.agregarAlHistorial(datosUsuario, cotizaciones, cobertura);
       setCotizacionActualId(historialId); 
-      console.log('✅ Guardado en historial con ID:', historialId);
+    
     } else {
-      console.warn('⚠️ Contexto de historial no disponible');
+     console.warn('⚠️ Contexto de historial no disponible');
     }
     
     setMostrarModalConfirmacion(true);
@@ -122,7 +123,7 @@ export const useCotizacion = () => {
   };
 
   const cargarCotizacionDesdeHistorial = (cotizacionGuardada) => {
-    console.log('🔄 Cargando desde historial:', cotizacionGuardada);
+   
     setDatosUsuario(cotizacionGuardada.datosUsuario);
     setCotizaciones(cotizacionGuardada.cotizaciones);
     setMostrarFormulario(false);

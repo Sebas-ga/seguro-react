@@ -25,13 +25,6 @@ const CotizadorPage = () => {
     cancelarSeleccion,
     cotizacionActualId //estado de cotización actual
   } = useCotizacion();
-  
-  console.log(' Estado en CotizadorPage:', {
-    mostrarFormulario,
-    mostrarResultados,
-    cargando,
-    datosUsuario
-  });
 
   return (
     <>

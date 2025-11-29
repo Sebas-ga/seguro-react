@@ -1,14 +1,22 @@
 import { FACTORES_AJUSTE,COBERTURAS } from '../data/coberturasData';
 
 export const calcularPrima = (datosUsuario, precioBase) => {
-  let prima = precioBase;
+    let prima = precioBase;
+ 
+  const edad = parseInt(datosUsuario.edad);
+  const tipoPropiedad = datosUsuario.tipoPropiedad;
+  const ubicacion = datosUsuario.ubicacion;
+  const reclamaciones = parseInt(datosUsuario.historialReclamaciones);
+  const metros = parseInt(datosUsuario.metrosCuadrados) || 0;
+
   
   // por edad
-  const edad = parseInt(datosUsuario.edad);
+ 
   if (edad >= 18 && edad <= 24) {
     prima *= FACTORES_AJUSTE.edad.joven;
   } else if (edad >= 61) {
     prima *= FACTORES_AJUSTE.edad.mayor;
+     console.log('📝 DATOS PROCESADOS:', { edad, tipoPropiedad, ubicacion, reclamaciones, metros }); // 
   }
   
   // por tipo de propiedad
@@ -18,7 +26,7 @@ export const calcularPrima = (datosUsuario, precioBase) => {
   prima *= FACTORES_AJUSTE.ubicacion[datosUsuario.ubicacion];
   
   // por reclamaciones
-  const reclamaciones = parseInt(datosUsuario.historialReclamaciones);
+  
   if (reclamaciones === 0) {
     prima *= FACTORES_AJUSTE.historialReclamaciones[0];
   } else if (reclamaciones === 1) {
@@ -30,7 +38,7 @@ export const calcularPrima = (datosUsuario, precioBase) => {
   }
   
   // por m2
-  const metros = parseInt(datosUsuario.metrosCuadrados) || 0;
+  
   prima += metros * FACTORES_AJUSTE.metrosCuadrados.factor;
   
   return Math.round(prima * 100) / 100; 

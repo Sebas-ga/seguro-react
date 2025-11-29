@@ -16,20 +16,20 @@ export const HistorialProvider = ({ children }) => {
 
   // Carga historial desde localStorage al inicializar
   useEffect(() => {
-    console.log('🔄 Cargando historial desde localStorage...');
+   // console.log(' Cargando historial desde localStorage...');
     const historialGuardado = localStorage.getItem('historialCotizaciones');
     
     if (historialGuardado) {
       try {
         const historialParseado = JSON.parse(historialGuardado);
-        console.log('📂 Historial cargado:', historialParseado);
+        //console.log(' Historial cargado:', historialParseado);
         setHistorial(historialParseado);
       } catch (error) {
-        console.error('❌ Error cargando historial:', error);
+       // console.error(' Error cargando historial:', error);
         setHistorial([]);
       }
     } else {
-      console.log('📂 No hay historial guardado en localStorage');
+     // console.log('📂 No hay historial guardado en localStorage');
     }
     
     setIsLoaded(true); //
@@ -38,16 +38,16 @@ export const HistorialProvider = ({ children }) => {
     useEffect(() => {
     if (isLoaded) { // Solo guarda si ya se cargo los datos iniciales
       try {
-        console.log('💾 Guardando historial en localStorage:', historial);
+       // console.log('💾 Guardando historial en localStorage:', historial);
         localStorage.setItem('historialCotizaciones', JSON.stringify(historial));
       } catch (error) {
-        console.error('❌ Error guardando historial:', error);
+      //  console.error('❌ Error guardando historial:', error);
       }
     }
   }, [historial, isLoaded]); 
 
   const agregarAlHistorial = (datosUsuario, cotizaciones, coberturaSeleccionada) => {
-    console.log('🔵 Agregando al historial...');
+   // console.log('🔵 Agregando al historial...');
     
     const nuevaCotizacion = {
       id: Date.now().toString(),
@@ -73,7 +73,7 @@ export const HistorialProvider = ({ children }) => {
       } : null
     };
 
-    console.log('🟢 Nueva cotización:', nuevaCotizacion);
+   // console.log('🟢 Nueva cotización:', nuevaCotizacion);
     
     setHistorial(prev => {
       const nuevoHistorial = [nuevaCotizacion, ...prev];
