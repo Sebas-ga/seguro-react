@@ -1,15 +1,24 @@
-# React + Vite
+# Cotizador de seguro
+Es un cotizador de seguros para propiedades que:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* Toma datos del usuario (edad, tipo de propiedad, ubicación, etc.)
 
-Currently, two official plugins are available:
+* Calcula 3 opciones de cobertura con precios personalizados
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Permite seleccionar una cobertura y guardarla en el historial
 
-## React Compiler
+* Muestra un historial persistente de todas las cotizaciones realizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Estructura del proyecto
+src/
+├── 🎨 components/     # Formulario/FormularioDatos.jsx **Captura los datos del usuario
+├── 🎣 hooks/         # Lógica personalizada de React
+├── 🌐 context/       # Estado global de la aplicación  
+├── 📄 pages/         # Vistas/páginas principales
+├── 🛠️ utils/         # Funciones auxiliares
+├── 📊 data/          # Datos estáticos
+└── 🎯 main/App       # Archivos principales
 
 ## Expanding the ESLint configuration
 
